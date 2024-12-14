@@ -1,0 +1,16 @@
+version : "3.7"
+services :
+  monolito :
+    container_name : monolito
+    image : monolito:v1
+    build : 
+      context : .
+    ports : 
+      - "3001:3001"
+    networks : 
+     - proyectos-app
+    environment:
+      MONGO_URI: ${MONGO_URI}
+
+networks : 
+  proyectos-app :
